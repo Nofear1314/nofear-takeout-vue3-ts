@@ -1,0 +1,54 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "types/**/*.d.ts",
+    "library/**/*.ts",
+    "components.d.ts",
+    "src/**/*.vue"
+  ],
+  "allowUnreachableCode": true, // 不报告执行不到的代码错误。
+  "compilerOptions": {
+    "noEmit": true,
+    "outDir": "./dist", // 输出目录，可以将生成的所有文件统一放在一个文件夹中
+    "sourceMap": false, // 禁用生成 *.js.map 文件
+    "target": "es2017",
+    "strict": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "types": ["element-plus/global", "node", "vue"],
+    "baseUrl": ".",
+    "paths": {
+      // 解决项目中使用@作为路径别名，导致vscode无法跳转文件的问题
+      "@/*": ["src/*"],
+      "@types/*": ["types/*"],
+      "~": ["./"],
+      "@c": ["./src/components"]
+    },
+    // 解决prettier对于装饰器语法的警告
+    "experimentalDecorators": true,
+    // 允许从没有默认导出的模块进行默认导入。这不影响代码，只是进行类型检查
+    "allowSyntheticDefaultImports": true,
+    // 解决.jsx文件无法快速跳转的问题
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "build",
+    "**/*.d.ts.map",
+    "**/*.spec.ts"
+  ]
+}

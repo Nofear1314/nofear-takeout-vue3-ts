@@ -1,0 +1,50 @@
+$primary-dark-color: #1c1e23;
+$primary-light-color: #f2f2f2;
+// 暗色主题
+html[data-theme='dark'] {
+  --primary-text-color: #{$primary-light-color};
+  --primary-background-color: #{$primary-light-color};
+  --primary-hover-background-color: #2e3033;
+
+  // --side-bar-background-color: #{$primary-dark-color};
+  // --side-bar-text-color: #{$primary-light-color};
+
+  // --header-background-color: #{$primary-dark-color};
+  --header-hamburger-hover-background-color: var(
+    --primary-hover-background-color
+  );
+  --tag-view-context-menu-background-color: #242424;
+
+  // --header-text-color: #{$primary-light-color};
+  // --header-breadcrumb-text-color: #9697a0;
+  // --header-breadcrumb-link-text-color: #f3f3f3;
+  // --header-breadcrumb-link-hover-text-color: #e6d5d5;
+  // --header-avatar-popper-background-color: #242424;
+  // --header-avatar-popper-border-color: #515159;
+  // --header-avatar-popper-hover-background-color: var(
+  //   --primary-hover-background-color
+  // );
+}
+:root {
+  --primary-text-color: #{$primary-dark-color};
+  --primary-background-color: #{$primary-dark-color};
+  --primary-hover-background-color: #f4f4f5;
+
+  // --side-bar-background-color: #{$primary-light-color};
+  // --side-bar-text-color: #{$primary-light-color};
+
+  // --header-background-color: #{$primary-light-color};
+  --header-hamburger-hover-background-color: var(
+    --primary-hover-background-color
+  );
+  --tag-view-context-menu-background-color:#fff;
+  // --header-text-color: #323639;
+  // --header-breadcrumb-text-color: #71717a;
+  // --header-breadcrumb-link-text-color: #323639; // --header-breadcrumb-link-hover-text-color: #856464;
+}
+
+::view-transition-new(root),
+::view-transition-old(root) {
+  animation: none;
+  -webkit-animation: none;
+}
