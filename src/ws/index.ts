@@ -107,7 +107,9 @@ class WebSocketService {
   // 启动心跳检测
   private startHeartbeat(): void {
     this.stopHeartbeat() // 先清除之前的心跳定时器
-
+    console.log('====================================')
+    console.log('')
+    console.log('====================================')
     // 设置心跳超时检测
     this.heartbeatTimeoutTimer = setTimeout(() => {
       console.warn('心跳超时，准备重连')
